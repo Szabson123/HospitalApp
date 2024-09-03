@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tworzenie Recepty</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tworzenie Recepty</h1>
+        <form class="prescription-form">
+            <label for="doctor">Lekarz wystawiający:</label>
+            <input type="text" id="doctor" name="doctor" required>
+
+            <label for="date">Data wystawienia:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="medication">Lek:</label>
+            <input type="text" id="medication" name="medication" required>
+
+            <label for="issued_on">Pacjent:</label>
+            <input type="text" id="patient" name="issued_to" required>
+
+            <button type="submit">Utwórz Receptę</button>
+        </form>
+    </div>
+</body>
+</html>

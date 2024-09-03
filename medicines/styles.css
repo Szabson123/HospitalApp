@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.medication-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.medication-table th, .medication-table td {
+    padding: 12px 15px;
+    border: 1px solid #dcdcdc;
+    text-align: left;
+}
+
+.medication-table th {
+    background-color: #3498db;
+    color: white;
+}
+
+.medication-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
