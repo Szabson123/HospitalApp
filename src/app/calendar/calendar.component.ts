@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-calendar',
   standalone: true,
   imports: [RouterModule],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  templateUrl: './calendar.component.html',
+  styleUrl: './calendar.component.css'
 })
-export class AppComponent {
-  title = 'HospitalFront';
+export class CalendarComponent {
+
 }

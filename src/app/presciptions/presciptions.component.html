@@ -1,0 +1,37 @@
+<div class="centered-container">
+    <div class="prescription-table-container">
+        <h1>Lista Recept</h1>
+        <table class="prescription-table">
+            <thead>
+                <tr>
+                    <th>Ilość</th>
+                    <th>Czas Dawkowania</th>
+                    <th>Leki</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let prescription of prescriptions">
+                    <td>{{ prescription.quantity }}</td>
+                    <td>
+                        <ul>
+                            <li *ngFor="let time of prescription.dosingTime">
+                                {{ time | slice:0:5 }}
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li *ngFor="let medicine of prescription.medicines">
+                                {{ medicine.name }}
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p *ngIf="prescriptions.length === 0">Brak dostępnych recept.</p>
+    </div>
+</div>
+<div class="back-to-panel">
+    <a routerLink="/" class="back-button">← Wróć do Panelu Głównego</a>
+  </div>

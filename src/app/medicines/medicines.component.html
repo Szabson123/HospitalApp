@@ -1,0 +1,35 @@
+<div class="centered-container">
+    <div class="medicine-table-container">
+      <h1>Lista Leków</h1>
+      <div *ngIf="medicines.length > 0; else noMedicines">
+        <table class="medication-table">
+          <thead>
+            <tr>
+              <th>Nazwa Leka</th>
+              <th>Ilość</th>
+              <th>Data Ważności</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let medicine of medicines">
+              <td>{{ medicine.name }}</td>
+              <td>{{ medicine.quantity }}</td>
+              <td>{{ medicine.expirationDate | date:'dd.MM.yyyy' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <ng-template #noMedicines>
+        <p>Brak leków do wyświetlenia.</p>
+      </ng-template>
+    </div>
+  </div>
+
+  <div class="back-to-panel">
+    <div style="margin-left: 20px; margin-right: 50px; margin-top: 10px;">
+        <a routerLink="/add-medicine" class="back-button">Dodaj lek</a>
+      </div>
+    <a routerLink="/" class="back-button">← Wróć do Panelu Głównego</a>
+  </div>
+
+  

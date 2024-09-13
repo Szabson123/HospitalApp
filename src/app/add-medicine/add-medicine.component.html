@@ -1,0 +1,31 @@
+<div class="form-container">
+    <h2>Dodaj Nowy Lek</h2>
+    <form [formGroup]="medicineForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Nazwa Leka</label>
+        <input id="name" formControlName="name" type="text" />
+        <div *ngIf="medicineForm.get('name')?.invalid && medicineForm.get('name')?.touched" class="error">
+          Nazwa leku jest wymagana.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="quantity">Ilość</label>
+        <input id="quantity" formControlName="quantity" type="number" />
+        <div *ngIf="medicineForm.get('quantity')?.invalid && medicineForm.get('quantity')?.touched" class="error">
+          Ilość jest wymagana i musi być większa niż 0.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="expirationDate">Data Ważności</label>
+        <input id="expirationDate" formControlName="expirationDate" type="date" />
+        <div *ngIf="medicineForm.get('expirationDate')?.invalid && medicineForm.get('expirationDate')?.touched" class="error">
+          Data ważności jest wymagana.
+        </div>
+      </div>
+  
+      <button type="submit" [disabled]="medicineForm.invalid">Dodaj Lek</button>
+    </form>
+  </div>
+  
