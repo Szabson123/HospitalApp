@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona główna lekarza</title>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        header {
+            background-color: #3A6EA5;
+            color: #fff;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        header .user-profile {
+            display: flex;
+            align-items: center;
+        }
+
+        header .user-profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-left: 10px;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .welcome {
+            margin-bottom: 30px;
+            font-size: 20px;
+        }
+
+        .tiles {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .tile {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .tile img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .tile h2 {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .tile p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #3A6EA5;
+            color: #fff;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        /* Responsywność */
+        @media (max-width: 768px) {
+            .tiles {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Klinika Dr. Kowalski</div>
+    <div class="user-profile">
+        <span>Witaj, Dr. Kowalski</span>
+        <img src="https://via.placeholder.com/40" alt="Profil">
+    </div>
+</header>
+
+<main>
+    <div class="welcome">
+        Witaj, Dr. Kowalski! Co chciałbyś dziś zrobić?
+    </div>
+
+    <div class="tiles">
+        <div class="tile">
+            <p>📅</p>
+            <h2>Kalendarz</h2>
+            <p>Przeglądaj kalendarz i umawiaj wizyty</p>
+        </div>
+
+        <div class="tile">
+            <p>💊</p>
+            <h2>Dodaj receptę</h2>
+            <p>Dodaj nową receptę dla pacjenta</p>
+        </div>
+
+        <div class="tile">
+            <p>👨‍⚕️</p>
+            <h2>Lista pacjentów</h2>
+            <p>Zarządzaj swoimi pacjentami</p>
+        </div>
+
+        <div class="tile">
+            <p>📋</p>
+            <h2>Lista leków</h2>
+            <p>Dodawaj leki i sprawdz datę ważności</p>
