@@ -34,11 +34,8 @@ export class UserService {
     return this.http.get<UserResponse>(this.apiUrl);
   }
 
-  addUser(user: User): Observable<any> {
-    const payload = {
-      PatientResult: user // Opakowanie danych w pole 'PatientResult'
-    };
-    return this.http.post<any>(this.apiUrl, payload);
+  // Dodawanie nowego użytkownika (pacjenta)
+  addUser(user: User): Observable<User> {
+    return this.http.post<User>(this.apiUrl, user);
   }
-  
 }
