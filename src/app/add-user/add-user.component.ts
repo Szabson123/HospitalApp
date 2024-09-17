@@ -40,8 +40,8 @@ export class AddUserComponent {
         age: this.userForm.value.age,
         weight: this.userForm.value.weight,
         phoneNumber: this.userForm.value.phoneNumber,
-        admission: this.userForm.value.admission,
-        discharge: this.userForm.value.discharge
+        admission: new Date(this.userForm.value.admission).toISOString(),
+        discharge: new Date(this.userForm.value.discharge).toISOString()  
       };
   
       // Przesłanie nowego użytkownika

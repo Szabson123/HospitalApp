@@ -36,7 +36,11 @@ export class UserService {
 
   // Dodawanie nowego użytkownika (pacjenta)
   addUser(user: User): Observable<User> {
-    return this.http.post<User>(this.apiUrl, user);
+    const payload = {
+      patientResult: user
+    };
+  
+    return this.http.post<User>(this.apiUrl, payload);
   }
 
 // Pobieranie szczegółów użytkownika po id
