@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { EventService, Event } from '../services/event.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router'; 
 
 @Component({
   selector: 'app-calendar',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.css'],
 })
