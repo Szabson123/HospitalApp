@@ -7,6 +7,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { AddMedicineComponent } from './add-medicine/add-medicine.component';
 import { AddUserComponent } from './add-user/add-user.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 export const routes: Routes = [
     {
@@ -29,6 +30,9 @@ export const routes: Routes = [
     },
     {
         path: 'calendar', component: CalendarComponent
+    },
+    {
+        path: 'user-details/:id', component: UserDetailsComponent
     }
 
 ];

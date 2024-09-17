@@ -1,37 +1,38 @@
 <div class="centered-container">
-  <div class="user-table-container">
+    <div class="user-table-container">
       <h1>Lista Użytkowników</h1>
       <table class="user-table">
-          <thead>
-              <tr>
-                  <th>Imię</th>
-                  <th>Nazwisko</th>
-                  <th>Wiek</th>
-                  <th>Waga</th>
-                  <th>Numer Telefonu</th>
-                  <th>Przyjęcie</th>
-                  <th>Wypis</th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr *ngFor="let user of users">
-                  <td>{{ user.firstName }}</td>
-                  <td>{{ user.lastName }}</td>
-                  <td>{{ user.age }}</td>
-                  <td>{{ user.weight }} kg</td>
-                  <td>{{ user.phoneNumber }}</td>
-                  <td>{{ user.admission | date:'yyyy-MM-dd HH:mm' }}</td>
-                  <td>{{ user.discharge | date:'yyyy-MM-dd HH:mm' }}</td>
-              </tr>
-          </tbody>
+        <thead>
+          <tr>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+            <th>Wiek</th>
+            <th>Waga</th>
+            <th>Numer Telefonu</th>
+            <th>Przyjęcie</th>
+            <th>Wypis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users" [routerLink]="['/user-details', user.id]" class="clickable-row">
+            <td>{{ user.firstName }}</td>
+            <td>{{ user.lastName }}</td>
+            <td>{{ user.age }}</td>
+            <td>{{ user.weight }} kg</td>
+            <td>{{ user.phoneNumber }}</td>
+            <td>{{ user.admission | date:'yyyy-MM-dd HH:mm' }}</td>
+            <td>{{ user.discharge | date:'yyyy-MM-dd HH:mm' }}</td>
+          </tr>
+        </tbody>
       </table>
       <p *ngIf="users.length === 0">Brak dostępnych użytkowników.</p>
+    </div>
   </div>
-</div>
-<div class="back-to-panel">
+  <div class="back-to-panel">
     <a routerLink="/" class="back-button">← Wróć do Panelu Głównego</a>
   </div>
-
+  
   <div class="back-to-panel">
     <a routerLink="/add-user" class="back-button">Dodaj nowego pacjenta</a>
   </div>
+  

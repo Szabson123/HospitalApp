@@ -1,135 +1,163 @@
-* {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
+/* Kontener kalendarza */
 .calendar {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto;
     padding: 20px;
     background-color: #fff;
-    display: flex;
-    flex-direction: column;
-}
-
-.month {
+  }
+  
+  /* Nawigacja po miesiącach */
+  .month {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 20px;
-}
-
-.month-name {
-    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .month-name {
+    font-size: 1.8em;
     font-weight: bold;
-}
-
-.prev, .next {
-    font-size: 2rem;
+  }
+  
+  .prev,
+  .next {
     cursor: pointer;
-}
-
-.weekdays {
-    display: flex;
-    justify-content: space-between;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: #666;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 10px;
-}
-
-.days {
+    font-size: 2em;
+    user-select: none;
+    background: none;
+    border: none;
+  }
+  
+  .prev:hover,
+  .next:hover {
+    color: #007bff;
+  }
+  
+  /* Nagłówki dni tygodnia */
+  .weekdays {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-gap: 10px;
-    flex-grow: 1;
-    margin-bottom: 300px;
-}
-
-.day {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    height: 150px; /* Zwiększamy wysokość, aby zmieścić przycisk */
-    overflow: hidden;
-    transition: background-color 0.3s;
-}
-
-
-.day:hover {
-    background-color: #007bff;
-    color: white;
-}
-
-.date {
-    font-size: 1.5rem;
-    text-align: right;
-}
-
-.event {
-    background-color: #eee;
-    margin-top: 5px;
-    padding: 5px;
-    border-radius: 4px;
+  }
+  
+  .weekday {
     text-align: center;
-    color: #333;
-    font-size: 0.85rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.day .events-container {
-    flex-grow: 1;
+    font-weight: bold;
+    padding: 10px 0;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  /* Siatka dni */
+  .days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+  
+  .week {
+    display: contents;
+  }
+  
+  .day {
+    min-height: 100px;
+    border: 1px solid #eee;
+    position: relative;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+  
+  .empty-day {
+    min-height: 100px;
+    border: 1px solid #eee;
+    box-sizing: border-box;
+  }
+  
+  .date {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .events-container {
     overflow-y: auto;
-    max-height: 120px; /* Ustaw maksymalną wysokość eventów */
-}
-
-.events-container::-webkit-scrollbar {
-    width: 5px;
-}
-
-.events-container::-webkit-scrollbar-thumb {
-    background-color: #ccc;
-    border-radius: 5px;
-}
-
-.events-container::-webkit-scrollbar-thumb:hover {
-    background-color: #aaa;
-}
-
-.add-event-btn {
-    margin-top: 10px;
-    padding: 8px 12px;
-    font-size: 0.85rem;
-    background-color: #009614;
-    color: white;
+    max-height: 80px;
+  }
+  
+  .event {
+    background-color: #007bff;
+    color: #fff;
+    padding: 2px 5px;
+    margin: 2px 0;
+    border-radius: 3px;
+    font-size: 0.9em;
+  }
+  
+  /* Przycisk dodawania wydarzenia */
+  .add-event-section {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .add-event-btn {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.add-event-btn:hover {
+    font-size: 1em;
+    border-radius: 5px;
+  }
+  
+  .add-event-btn:hover {
+    background-color: #218838;
+  }
+  
+  /* Formularz dodawania wydarzenia */
+  .add-event-form {
+    max-width: 500px;
+    margin: 0 auto 20px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  .add-event-form h3 {
+    margin-bottom: 15px;
+  }
+  
+  .add-event-form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .add-event-form input,
+  .add-event-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+  }
+  
+  .add-event-form button {
+    padding: 8px 15px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  /* Przycisk powrotu */
+  .back-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: #fff !important;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+  }
+  
+  .back-button:hover {
     background-color: #0056b3;
-}
-
-.events-container {
-    flex-grow: 1;
-    overflow-y: auto;
-    max-height: 100px; /* Zmniejszamy wysokość, aby było miejsce na przycisk */
-}
+  }
+  

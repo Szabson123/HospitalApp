@@ -1,0 +1,73 @@
+<div class="centered-container">
+    <h1>Szczegóły Użytkownika</h1>
+  
+    <!-- Informacje o użytkowniku -->
+    <div class="user-info">
+      <div class="info-row">
+        <div class="info-label">Imię:</div>
+        <div class="info-value">{{ user.firstName }}</div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">Nazwisko:</div>
+        <div class="info-value">{{ user.lastName }}</div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">Wiek:</div>
+        <div class="info-value">{{ user.age }}</div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">Waga:</div>
+        <div class="info-value">{{ user.weight }} kg</div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">Numer Telefonu:</div>
+        <div class="info-value">{{ user.phoneNumber }}</div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">Przyjęcie:</div>
+        <div class="info-value">{{ user.admission | date:'yyyy-MM-dd HH:mm' }}</div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">Wypis:</div>
+        <div class="info-value">{{ user.discharge | date:'yyyy-MM-dd HH:mm' }}</div>
+      </div>
+    </div>
+  
+    <!-- Wyświetlanie recept i leków -->
+    <div *ngIf="user.prescriptionsWithMedicines?.length > 0" class="prescriptions-section">
+      <h2>Recepty</h2>
+      <div *ngFor="let prescription of user.prescriptionsWithMedicines" class="prescription-card">
+        <h3>Recepta ID: {{ prescription.id }}</h3>
+        <p><strong>Ilość dni:</strong> {{ prescription.quantity }}</p>
+        <p><strong>Godziny dawkowania:</strong>
+          <span *ngFor="let time of prescription.dosingTime; let isLast = last">
+            {{ time | timeFormat }}<span *ngIf="!isLast">, </span>
+          </span>
+        </p>
+        <h4>Leki:</h4>
+        <ul>
+          <li *ngFor="let medicine of prescription.medicines">
+            <p><strong>Nazwa:</strong> {{ medicine.name }}</p>
+            <p><strong>Ilość:</strong> {{ medicine.quantity }} mg</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  
+    <!-- Wyświetlanie wydarzeń -->
+    <div *ngIf="user.events?.length > 0" class="events-section">
+      <h2>Wydarzenia</h2>
+      <div *ngFor="let event of user.events" class="event-card">
+        <h3>{{ event.name }}</h3>
+        <p><strong>Opis:</strong> {{ event.description }}</p>
+        <p><strong>Data:</strong> {{ event.date | date:'yyyy-MM-dd HH:mm' }}</p>
+      </div>
+    </div>
+  
+    <p *ngIf="!user">Ładowanie szczegółów użytkownika...</p>
+  
+    <div class="back-to-panel">
+      <a routerLink="/users" class="back-button">← Wróć do Listy Użytkowników</a>
+    </div>
+  </div>
+  

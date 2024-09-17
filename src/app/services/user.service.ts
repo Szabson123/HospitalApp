@@ -38,4 +38,11 @@ export class UserService {
   addUser(user: User): Observable<User> {
     return this.http.post<User>(this.apiUrl, user);
   }
+
+// Pobieranie szczegółów użytkownika po id
+  getUserById(userId: string): Observable<{ value: User, isError: boolean, statusCode: number, message: string }> {
+    const url = `${this.apiUrl}/${userId}`;
+    return this.http.get<{ value: User, isError: boolean, statusCode: number, message: string }>(url);
+  }
+
 }
